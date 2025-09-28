@@ -12,20 +12,12 @@ const CodeExportPopup = () => {
     {
       id: 1,
       checked: true,
-      label: 'Export as HTML & CSS',
-      icon: '📄'
+      label: 'Include assets (images, styles, fonts, etc.)'
     },
     {
       id: 2,
-      checked: false,
-      label: 'Include assets(image, styles, fonts, etc.)',
-      icon: '📱'
-    },
-    {
-      id: 3,
-      checked: false,
-      label: 'Include custom code',
-      icon: '🗜️'
+      checked: true,
+      label: 'Include custom code'
     }
   ];
 
@@ -33,30 +25,17 @@ const CodeExportPopup = () => {
     {
       id: 1,
       checked: true,
-      label: 'Export as React Component',
-      description: 'Generate functional React component',
-      icon: '⚛️'
+      label: "Use 'app' directory (NextJS v13+)"
     },
     {
       id: 2,
-      checked: false,
-      label: 'Include TypeScript types',
-      description: 'Add TypeScript interface definitions',
-      icon: '🔷'
+      checked: true,
+      label: 'Include assets locally (images, styles, fonts, etc.)'
     },
     {
       id: 3,
-      checked: false,
-      label: 'Use CSS Modules',
-      description: 'Generate scoped CSS module files',
-      icon: '🎨'
-    },
-    {
-      id: 4,
-      checked: false,
-      label: 'Include prop validation',
-      description: 'Add PropTypes or TypeScript validation',
-      icon: '✅'
+      checked: true,
+      label: 'Include custom code'
     }
   ];
 
@@ -76,55 +55,92 @@ const CodeExportPopup = () => {
             {/* Header */}
             <div className="popup-header">
               <h2>Code Export</h2>
-              <p>Manage the way your code will be exported.</p>
+              <p>Manage how you download your website's code.</p>
               <button className="close-button" onClick={closePopup}>
                 ✕
               </button>
             </div>
 
-            {/* Tabs */}
-            <div className="tabs-container">
-              <button 
-                className={`tab ${activeTab === 'html' ? 'active' : ''}`}
-                onClick={() => setActiveTab('html')}
-              >
-                HTML & CSS
-              </button>
-              <button 
-                className={`tab ${activeTab === 'nextjs' ? 'active' : ''}`}
-                onClick={() => setActiveTab('nextjs')}
-              >
-                Next.JS
-              </button>
-            </div>
-
             {/* Content */}
             <div className="popup-content">
-              {getCurrentContent().map((item) => (
-                <div key={item.id} className="content-item">
-                  <div className="checkbox-container">
-                    <input 
-                      type="checkbox" 
-                      id={`item-${item.id}`}
-                      defaultChecked={item.checked}
-                      className="custom-checkbox"
-                    />
-                    <label htmlFor={`item-${item.id}`} className="checkbox-label">
-                      <span className="checkbox-icon">{item.icon}</span>
-                      <div className="checkbox-text">
-                        <span className="checkbox-title">{item.label}</span>
-                        <span className="checkbox-description">{item.description}</span>
-                      </div>
-                    </label>
-                  </div>
+              <div className="content-box">
+                {/* Tabs */}
+                <div className="tabs-container">
+                  <button 
+                    className={`tab ${activeTab === 'html' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('html')}
+                  >
+                    HTML & CSS
+                  </button>
+                  <button 
+                    className={`tab ${activeTab === 'nextjs' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('nextjs')}
+                  >
+                    Next JS
+                  </button>
                 </div>
-              ))}
+
+                {/* Export Content */}
+                {activeTab === 'html' && (
+                  <div className="export-section">
+                    <div className="export-header">
+                      <div className="export-title">
+                        <span className="html-icon">5</span>
+                        <span>Export as HTML & CSS</span>
+                      </div>
+                      <span className="zipped-badge">Zipped</span>
+                    </div>
+                    <div className="options-list">
+                      {htmlContent.map((item) => (
+                        <div key={item.id} className="option-item">
+                          <input 
+                            type="checkbox" 
+                            id={`item-${item.id}`}
+                            defaultChecked={item.checked}
+                            className="custom-checkbox"
+                          />
+                          <label htmlFor={`item-${item.id}`} className="option-label">
+                            {item.label}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {activeTab === 'nextjs' && (
+                  <div className="export-section">
+                    <div className="export-header">
+                      <div className="export-title">
+                        <span className="nextjs-icon">⚡</span>
+                        <span>Export as Next JS Project</span>
+                      </div>
+                      <span className="zipped-badge">Zipped</span>
+                    </div>
+                    <div className="options-list">
+                      {nextjsContent.map((item) => (
+                        <div key={item.id} className="option-item">
+                          <input 
+                            type="checkbox" 
+                            id={`item-${item.id}`}
+                            defaultChecked={item.checked}
+                            className="custom-checkbox"
+                          />
+                          <label htmlFor={`item-${item.id}`} className="option-label">
+                            {item.label}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Footer */}
             <div className="popup-footer">
               <button className="download-button">
-                Download HTML & CSS Files
+                {activeTab === 'html' ? 'Download HTML CSS Project' : 'Download Next JS Project'}
               </button>
             </div>
           </div>

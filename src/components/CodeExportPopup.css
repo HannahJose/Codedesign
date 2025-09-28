@@ -49,33 +49,32 @@
 
 /* Popup Container */
 .popup-container {
-  background-color: #2d2d2d;
+  background-color: #1a1a1a;
   border-radius: 12px;
   width: 520px;
   max-width: 90vw;
   max-height: 90vh;
   overflow: hidden;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
   position: relative;
 }
 
 /* Header */
 .popup-header {
-  padding: 24px 24px 20px 24px;
-  border-bottom: 1px solid #404040;
+  padding: 24px 24px 16px 24px;
   position: relative;
 }
 
 .popup-header h2 {
   color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   margin: 0 0 8px 0;
   line-height: 1.2;
 }
 
 .popup-header p {
-  color: #b3b3b3;
+  color: #888888;
   font-size: 14px;
   margin: 0;
   line-height: 1.4;
@@ -87,13 +86,13 @@
   right: 20px;
   background: none;
   border: none;
-  color: #b3b3b3;
-  font-size: 16px;
+  color: #888888;
+  font-size: 18px;
   cursor: pointer;
   padding: 4px;
   border-radius: 4px;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,139 +100,214 @@
 }
 
 .close-button:hover {
-  background-color: #404040;
+  background-color: #333333;
   color: #ffffff;
 }
 
 /* Tabs */
 .tabs-container {
   display: flex;
-  border-bottom: 1px solid #404040;
-  background-color: #333333;
+  background-color:grey;
+  padding: 0;
+  gap: 0;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .tab {
   flex: 1;
-  background: none;
+  background: #1a1a1a;
   border: none;
-  color: #b3b3b3;
+  color: #ffffff;
   padding: 16px 24px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  outline: none;
 }
 
 .tab:hover {
-  background-color: #3a3a3a;
+  background-color: #333333;
   color: #ffffff;
 }
 
 .tab.active {
-  background-color: #2d2d2d;
+  background-color: #1a1a1a;
   color: #ffffff;
-  border-bottom-color: #007bff;
+}
+
+.tab:not(.active) {
+  background-color: #2a2a2a;
+  color: #888888;
 }
 
 /* Content */
 .popup-content {
-  padding: 20px 24px;
+  padding: 24px;
   max-height: 320px;
   overflow-y: auto;
 }
 
-.content-item {
-  margin-bottom: 16px;
+.content-box {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #333333;
 }
 
-.content-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Checkbox Container */
-.checkbox-container {
+/* Export Section */
+.export-section {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.export-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.export-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.html-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #e34c26, #f06529);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  position: relative;
+}
+
+.html-icon::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.nextjs-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #000000;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.nextjs-icon::before {
+  content: '⚡';
+  font-size: 10px;
+}
+
+.zipped-badge {
+  background-color: #2a2a2a;
+  color: #888888;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Custom Checkbox */
 .custom-checkbox {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   margin: 0;
-  margin-right: 12px;
-  margin-top: 2px;
-  accent-color: #007bff;
   cursor: pointer;
   flex-shrink: 0;
+  appearance: none;
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.2s ease;
 }
 
-/* Checkbox Label */
-.checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  cursor: pointer;
-  width: 100%;
-  gap: 12px;
+.custom-checkbox:checked {
+  background-color: #8b5cf6;
+  border-color: #8b5cf6;
 }
 
-.checkbox-icon {
-  font-size: 16px;
-  flex-shrink: 0;
-  margin-top: 1px;
+.custom-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
 }
 
-.checkbox-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-}
-
-.checkbox-title {
+.option-label {
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.3;
-}
-
-.checkbox-description {
-  color: #b3b3b3;
-  font-size: 13px;
+  cursor: pointer;
   line-height: 1.4;
 }
 
 /* Footer */
 .popup-footer {
-  padding: 20px 24px 24px 24px;
-  border-top: 1px solid #404040;
-  background-color: #333333;
+  padding: 24px;
+  background-color: #1a1a1a;
 }
 
 .download-button {
   width: 100%;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  color: white;
+  background-color: #2a2a2a;
+  color: #ffffff;
   border: none;
-  padding: 14px 24px;
+  padding: 16px 24px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
 }
 
 .download-button:hover {
-  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
-  transform: translateY(-1px);
+  background-color: #333333;
 }
 
 .download-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+  background-color: #2a2a2a;
 }
 
 /* Scrollbar Styles */
@@ -242,17 +316,17 @@
 }
 
 .popup-content::-webkit-scrollbar-track {
-  background: #404040;
+  background: #2a2a2a;
   border-radius: 3px;
 }
 
 .popup-content::-webkit-scrollbar-thumb {
-  background: #666666;
+  background: #444444;
   border-radius: 3px;
 }
 
 .popup-content::-webkit-scrollbar-thumb:hover {
-  background: #808080;
+  background: #666666;
 }
 
 /* Responsive */
