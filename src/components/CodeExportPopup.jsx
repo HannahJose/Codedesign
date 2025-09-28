@@ -13,28 +13,18 @@ const CodeExportPopup = () => {
       id: 1,
       checked: true,
       label: 'Export as HTML & CSS',
-      description: 'Get basic HTML structure and CSS styling',
       icon: '📄'
     },
     {
       id: 2,
       checked: false,
-      label: 'Copy HTML markup only',
-      description: 'Just the HTML structure without CSS',
-      icon: '📋'
+      label: 'Include assets(image, styles, fonts, etc.)',
+      icon: '📱'
     },
     {
       id: 3,
       checked: false,
-      label: 'Include responsive breakpoints',
-      description: 'Add mobile and tablet responsive styles',
-      icon: '📱'
-    },
-    {
-      id: 4,
-      checked: false,
-      label: 'Minify CSS output',
-      description: 'Compress CSS for production use',
+      label: 'Include custom code',
       icon: '🗜️'
     }
   ];
