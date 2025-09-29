@@ -66,18 +66,22 @@ const CodeExportPopup = () => {
               <div className="content-box">
                 {/* Tabs */}
                 <div className="tabs-container">
-                  <button 
-                    className={`tab ${activeTab === 'html' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('html')}
-                  >
-                    HTML & CSS
-                  </button>
-                  <button 
-                    className={`tab ${activeTab === 'nextjs' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('nextjs')}
-                  >
-                    Next JS
-                  </button>
+                  <div className="tab-wrapper">
+                    <button 
+                      className={`tab ${activeTab === 'html' ? 'active' : ''}`}
+                      onClick={() => setActiveTab('html')}
+                    >
+                      HTML & CSS
+                    </button>
+                  </div>
+                  <div className="tab-wrapper">
+                    <button 
+                      className={`tab ${activeTab === 'nextjs' ? 'active' : ''}`}
+                      onClick={() => setActiveTab('nextjs')}
+                    >
+                      Next JS
+                    </button>
+                  </div>
                 </div>
 
                 {/* Export Content */}
