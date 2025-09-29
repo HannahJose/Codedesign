@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { FaHtml5 } from 'react-icons/fa';
+import { FaReact } from "react-icons/fa";
 import './CodeExportPopup.css';
+
 
 const CodeExportPopup = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -89,7 +92,7 @@ const CodeExportPopup = () => {
                   <div className="export-section">
                     <div className="export-header">
                       <div className="export-title">
-                        <span className="html-icon">5</span>
+                        <FaHtml5 />
                         <span>Export as HTML & CSS</span>
                       </div>
                       <span className="zipped-badge">Zipped</span>
@@ -116,7 +119,7 @@ const CodeExportPopup = () => {
                   <div className="export-section">
                     <div className="export-header">
                       <div className="export-title">
-                        <span className="nextjs-icon">⚡</span>
+                        <FaReact />
                         <span>Export as Next JS Project</span>
                       </div>
                       <span className="zipped-badge">Zipped</span>
