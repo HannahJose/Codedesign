@@ -1,4 +1,4 @@
-# Frontend Assessment Task
+# Frontend Task
 
 A sample frontend framework.
 
