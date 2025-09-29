@@ -310,31 +310,41 @@
 }
 
 .download-button {
-  width: calc(50% - 37px);
-  background: linear-gradient(180deg, #333333 0%, #2a2a2a 100%);
-  color: #ffffff;
-  border: none;
-  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 330px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #3e3e3e 0%, #343434 50%, #2b2b2b 100%);
+  color: #eeeeee;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 360;
+  font-weight: 400;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin: 0 auto;
-  display: block;
+  transition: all 120ms ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  outline: none !important;
+  box-sizing: border-box;
+  
 }
-
+/*button:hover{
+  border-color:rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, #4a4a4a 0%, #3e3e3e 50%, #323232 100%);
+  box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+}*/
 .download-button:hover {
-  background: linear-gradient(180deg, #3a3a3a 0%, #333333 100%);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+  background: linear-gradient(180deg, #4a4a4a 0%, #3e3e3e 50%, #323232 100%);
+  box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.4) !important;
 }
-
 .download-button:active {
-  background: linear-gradient(180deg, #2a2a2a 0%, #222222 100%);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transform: translateY(0);
+  background: linear-gradient(180deg, #5a5a5a 0%, #4e4e4e 50%, #454545 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  outline: none !important;
 }
 
 /* Scrollbar Styles */
